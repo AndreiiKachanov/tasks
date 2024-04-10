@@ -1,0 +1,17 @@
+{
+  "require": {
+    "jenssegers/agent": "^2.6",
+    "guzzlehttp/guzzle": "^7.2",
+    "ext-pdo": "*",
+    "ext-iconv": "*",
+    "ext-gd": "*"
+  },
+    "autoload": {
+    "files": [
+      "helper.php"
+    ],
+    "psr-4": {
+      "App\\": "src/"
+    }
+  }
+}
