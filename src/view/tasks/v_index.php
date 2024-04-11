@@ -33,7 +33,7 @@
                     <?= $item['status']?>
                 </div>
                 <div class="col-2">
-                    <a class="btn btn-success btn-sm btn-block" href="task/<?= $item['id']?>">Просмотреть</a>
+                    <a class="btn btn-secondary btn-sm btn-block" href="task/<?= $item['id']?>">Просмотреть</a>
                     <?php if ($user !== null) :?>
                         <a class="btn btn-primary btn-sm btn-block mt-2" href="edit/<?= $item['id']?>">Изменить</a>
                     <?php endif ?>

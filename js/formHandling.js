@@ -10,24 +10,25 @@ const selectors = {
 let prevFormValues; // Объект для хранения предыдущих значений полей
 
 $(document).ready(function () {
-    $(document.body).on('click', '[data-cs-focusable]', function () {
-        // Получаем экземпляр CKEditor по его ID (в данном случае, "content")
-        let ckeditorInstance = CKEDITOR.instances['content'];
-        // Проверяем, существует ли экземпляр CKEditor
-        if (ckeditorInstance) {
-            // Устанавливаем фокус в текстовую область CKEditor
-            ckeditorInstance.focus();
-        }
-    });
-
     initCkEditor();
     configureValidator();
     initFormValidation($(selectors.form));
 
     // обработчики событий
+    $(document.body).on('click', '[data-cs-focusable]', ckEditorFocus);
     $(document.body).on('change', '#file', onFileFieldChange);
     $(document.body).on('click', '#buttonPreview', onPreviewButtonClick);
 });
+
+// фокусирование курсора
+function ckEditorFocus() {
+    let ckeditorInstance = CKEDITOR.instances['content'];
+    // Проверяем, существует ли экземпляр CKEditor
+    if (ckeditorInstance) {
+        // Устанавливаем фокус в текстовую область CKEditor
+        ckeditorInstance.focus();
+    }
+}
 
 // инициализация CK Editor
 function initCkEditor() {

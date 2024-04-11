@@ -11,6 +11,7 @@ img/tasks/preview/*
 
 /vendor
 1.zip
+backup.sql
 error_log.txt
 config.php
 
